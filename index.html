@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LifeLearn breed visuals</title>
+</head>
+
+<body>
+    <div class="bv-wrap">
+        <div class="bv-preview">
+            <div class="bv-canvas-shell">
+                <canvas id="bvCanvas" width="882" height="1902"></canvas>
+            </div>
+            <div class="bv-hint">Drag the photo to reposition it inside the frame.</div>
+            <div class="bv-zoom-row">
+                <span style="font-size:11px;color:#999;">Zoom</span>
+                <input type="range" id="zoomSlider" min="100" max="300" value="100" disabled>
+                <span id="zoomVal">1.0x</span>
+            </div>
+            <div class="bv-field" style="width:264px;">
+                <label>File name</label>
+                <input type="text" id="fFileName" value="breed-visual">
+            </div>
+            <button class="bv-download" id="downloadBtn">Download PNG (300ppi)</button>
+        </div>
+
+        <div class="bv-form">
+            <div class="bv-section-title">Photo</div>
+            <div class="bv-field">
+                <label>Upload image (fills 267×214 frame, upper right)</label>
+                <input type="file" id="photoInput" accept="image/*">
+            </div>
+
+            <div class="bv-section-title">Stats</div>
+            <div class="bv-row2">
+                <div class="bv-field">
+                    <label>Height</label>
+                    <div class="bv-minmax">
+                        <input type="text" id="fHeightMin" value="9">
+                        <span class="bv-dash">–</span>
+                        <input type="text" id="fHeightMax" value="11.5">
+                        <span class="bv-unit">in</span>
+                    </div>
+                </div>
+                <div class="bv-field">
+                    <label>Weight</label>
+                    <div class="bv-minmax">
+                        <input type="text" id="fWeightMin" value="7">
+                        <span class="bv-dash">–</span>
+                        <input type="text" id="fWeightMax" value="10">
+                        <span class="bv-unit">lb</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bv-row2">
+                <div class="bv-field">
+                    <label>Lifespan</label>
+                    <div class="bv-minmax">
+                        <input type="text" id="fLifespanMin" value="12">
+                        <span class="bv-dash">–</span>
+                        <input type="text" id="fLifespanMax" value="15">
+                        <span class="bv-unit">yr</span>
+                    </div>
+                </div>
+                <div class="bv-field">
+                    <label>Senior age</label>
+                    <div class="bv-minmax">
+                        <input type="text" id="fSenior" value="9">
+                        <span class="bv-unit">yr</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bv-section-title">Traits (1–5)</div>
+            <div class="bv-bar-field">
+                <div class="bv-bar-field-top">
+                    <label>Energy</label>
+                    <input type="number" class="bv-trait-input" id="tEnergy" value="1" min="1" max="5" step="1">
+                </div>
+            </div>
+            <div class="bv-bar-field">
+                <div class="bv-bar-field-top">
+                    <label>Grooming</label>
+                    <input type="number" class="bv-trait-input" id="tGrooming" value="1" min="1" max="5" step="1">
+                </div>
+            </div>
+            <div class="bv-bar-field">
+                <div class="bv-bar-field-top">
+                    <label>Shedding</label>
+                    <input type="number" class="bv-trait-input" id="tShedding" value="1" min="1" max="5" step="1">
+                </div>
+            </div>
+            <div class="bv-bar-field">
+                <div class="bv-bar-field-top">
+                    <label>Drooling</label>
+                    <input type="number" class="bv-trait-input" id="tDrooling" value="1" min="1" max="5" step="1">
+                </div>
+            </div>
+            <div class="bv-bar-field">
+                <div class="bv-bar-field-top">
+                    <label>Barking</label>
+                    <input type="number" class="bv-trait-input" id="tBarking" value="1" min="1" max="5" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/pako@3.0.1/dist/browser/pako.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/upng-js@2.1.0/UPNG.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
